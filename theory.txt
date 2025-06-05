@@ -1,0 +1,53 @@
+Questions = {
+    What is ECMAScript (ES5, ES6, ES2015) : Scrirpting language of the javascript, basically they created the guidelines & documentation. What does the JS have?
+    What is JAVAScript : Implementation of ECMAScript with addition. Basically C is ECMA and C++ is JAVAScript.
+    V8 : Brought to add some backend things that java has to make javascript a backend language.
+    What is bun : Outperforms NodeJS and is a competitor of JAVAScript written in Zig.
+}
+
+What can you do with NodeJS = {
+    What is CLI : Command Line Interface.
+    Main function of NodeJS : to create an HTTP Server.
+}
+
+What is HTTP Server = {
+    1. Fullform : Hyper Text Transfer Protocol.
+    2. Machine : communicates with each other.
+    3. For frontend to talk with the backend.
+    4. What is an HTTPS Server : The place where the backend application is present and auth infra etc are present. 
+}
+
+HTTP decoded = {
+    Protocol (HTTP/HTTPS) : You need to know the URL of backend of server. https://
+    Address (URL, IP, Port) : chat.openai.com
+    Route : /backend-api/conversations
+    Headers, Body, Query Params : Headers-Cookie, Body-usually in JSON asking the function that the server has to do.
+    Method : What kind of request (POST/GET/PUT/DELETE)
+}
+
+HTTPS Server Side = {
+    Response, Headers
+    Response Body
+    Status codes
+}
+
+Firing a Request = {
+    1. Browser will parse the URL.
+    2. Does a DNS Lookup -> We got to google.com i.e an IP that is to find a server on the internet.
+    3. Does a handshake through OSI Model.
+    4. Returns an output for the request with status code.
+}
+
+Common Methods in sending request = {
+    GET : To get the request. 
+    POST : To adding a request.
+    PUT : To update the request.
+    DELETE : To remove the request.
+}
+
+Status code = {
+    200 : Everything is ok.
+    404 : Page not found.
+    403 : Auth issues.
+    500 : Internal Server error.
+}

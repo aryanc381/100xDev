@@ -1,0 +1,56 @@
+<!-- Div: is block tag called as non-sematic tage and span is row tag -->
+<!-- Semantic: A specific fnction -->
+<!-- Non-semantic: Can be used for anything -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Intermediate</title>
+</head>
+<body>
+
+<div id="navbar" class="sections">
+    This is my NAVBAR
+</div>
+
+<div id="section 1" class="sections">
+    This is my HOME SECTION
+</div>
+
+<div id="footer" class="sections">
+    This is my Footer
+</div>
+
+<form action="">
+    <h1>CONTACT US</h1>
+    
+    <div>Name: <input type="text" placeholder="Enter your name"  name="username" id="name"></div>
+    
+    <div>Email: <input type="text" name="useremail" id="email"></div> 
+    
+    <div>Address: <textarea name="usermessage" id="message" cols="60" rows="10"></textarea></div>
+    
+    <div>Number: <input type="number" name="usernum" id="number"></div>
+    
+    <div>Gender: <select name="usergender" id="gender">
+        <option value="">choose one</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="LGBTQSOURDA+-=*&%^">Others</option>
+    </select></div>
+
+    <div>Date & Time: <input type="datetime-local" name="usertime" id="time"></div>
+
+    <fieldset>
+        <legend>Mode of payment</legend>
+            <div>Frontend: <input type="checkbox" name="userfront" id="checkbox"></div>
+            <div>Backend: <input type="checkbox" name="userback" id="checkbox"></div>
+    </fieldset>
+
+    <div>Password: <input type="password" name="userpassword" id="password"></div>
+
+    <input type="submit" value="Submit">
+    <script src="http.js"></script>
+</form>
+    
+</body>
+</html>
