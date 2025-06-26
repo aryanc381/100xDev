@@ -1,0 +1,78 @@
+1. BLOB {
+    - Binary Large Object -> each version of a file is respresented as a BLOB.
+    - It contains file data.
+    - Doesnt contain metadata.
+    - Binary file.
+    - In git database, it is named as .SHA1 of a the file.
+    - In git, files are not addressed by names.
+    - Everything is content-addressed.
+}
+
+2. Trees {
+    - Object that rrepresents a directory.
+    - It holds blobs + subdirectories.
+    - Stores references to blobs + trees -> names as SHA1 hash of tree object.
+}
+
+3. Commit {
+    - Stores history of a push.
+}
+
+4. Push {
+    - To put stuff on github. 
+}
+
+5. Pull {
+    - To update something in local repo from github web repo. 
+}
+
+6. Clone {
+    - Bring entire repo to local repo
+}
+
+7. Add {
+    - Add file penchoda.
+}
+
+8. git commit -m "updated repo" {
+    - save files in git.
+}
+
+9. git remote -v {
+    - check if remote has been added or not.
+}
+
+10. vi README.md {
+    - to change things inside the README.md
+}
+
+11. cat README.md {
+    - to see content of README.md
+}
+
+12. hotfix branch {
+    - urgent, small, critical change is done in hotfix.
+}
+
+13. feature branch {
+    - add features to the branch.
+}
+
+14. main branch {
+    - production app.
+}
+
+15. git checkout -b new_branch {
+    - new branch "new_branch" has been added and git switches there.
+}
+
+16. git branch -D branch_name {
+    - to remove a branch
+}
+
+17. conflicts {
+    - coder 1 made a change in readme.md at t=1s.
+    - I git cloned at t=0s.
+    - I tried to make PR and merge it at t=3s.
+    - This will give me an error.
+}
