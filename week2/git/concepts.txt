@@ -65,7 +65,7 @@
 15. git checkout -b new_branch {
     - new branch "new_branch" has been added and git switches there.
 }
-
+  
 16. git branch -D branch_name {
     - to remove a branch
 }
@@ -76,3 +76,5 @@
     - I tried to make PR and merge it at t=3s.
     - This will give me an error.
 }
+
+ok
