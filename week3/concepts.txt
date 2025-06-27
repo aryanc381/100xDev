@@ -1,0 +1,10 @@
+1. Before any endpoint in a website is hit, there are some authorization checks to be made to make sure whatever is hitting the endpoint is valid and correct.
+2. This is done by MIDDLE-WARE which does 2 things mainly {
+    - Auth       : authorization of the request.
+    - Validation : ensure that the config of user i/p req is valid.
+
+    For example the hospital-kidney example harkirat took [
+        1. user needs to send username and password in the header -> Auth.
+        2. user needs to send kidney parameter either 1 or 2 (humans have max 2), if the user sends  1 > kidney >2 it is invalid -> Validation.
+    ]
+}
