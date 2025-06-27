@@ -8,3 +8,32 @@
         2. user needs to send kidney parameter either 1 or 2 (humans have max 2), if the user sends  1 > kidney >2 it is invalid -> Validation.
     ]
 }
+
+3. THE FUCKING CONCEPT IS CRAZY => {
+    1. middle-ware is just a fucking function that is called in the fucking main route that checks before the route goes to the fucking final endpoint.
+    2. middle-ware uses "next" which is a fucking chain between the fucking pre-checks made.
+    3. Fucking for example (wait what? lemaO what was that) anyway => {
+        app.get("/", middleware1, middleware2, (req, res) => {
+            res.send("This fucking happens")
+            // the "/" route first goes to the fucker function middleware1(req, res, next) {
+                which does yada yada yada :>
+                next(); // this fucker routes the current fucking function to the next fucking function which is middleware2.
+            }
+        });
+    } 
+    damn nigga this shi was crwazyy!!
+    4. app.use(middleware1) -> esa likh diya toh iske niche ka sab kuch app.(get post delete put) wtv will have this middleware as the prefunction.
+
+    5. app.use(express.json()) -> allows req.body.whatever; to execute properly, this .body tag is sometimes not compatible, hence we add a middleware that first checks if the body is compatible.
+}
+
+GLOBAL CATCHES = {
+    - if there is an exception, user ne agar endpoint ko exploit karne ki koshish kari, then
+    this guy would not leak internal info of the server, but say smth like "gadbad hogayi, arey siti bajgayi". 
+
+    - middleware that has 4 arguments (err, req, res, next) that are used for exception and error handling.
+
+    - WHERE IS THIS USED : | a. Logging the user request to know what they are upto.
+                           | b. To get to know where server is failing.
+                           | c. Whenever something bad happens, control goes here.
+}

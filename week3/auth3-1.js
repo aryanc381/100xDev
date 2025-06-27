@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 
 app.get("/", (req, res) => {
-    // do health checks here
+    // do health check s here
     const kidneyId = parseInt(req.query.kidneyId);
     const username = req.headers.username;
     const password = req.headers.password;
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
         return;
     }
 
-    if(username === "aryan" && password === "Venom@54321") {
+    if(username === "aryan" && password === "chodi@123") {
         res.status(200).json({
             msg: "You exist in the dbms!"
         });
