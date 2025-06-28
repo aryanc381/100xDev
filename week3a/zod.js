@@ -19,11 +19,11 @@ app.post("/health-checkup", (req, res) => {
     // res.send("You have " + kidneyLength + " kidneys.");
 });
 
-// app.use((err, req, res, next) => { // exception handling
-//     res.json({
-//         msg: "Sorry bhai pata nai :(",
-//     });
-// });
+app.use((err, req, res, next) => { // exception handling
+    res.json({
+        msg: "Sorry bhai pata nai :(",
+    });
+});
 
 app.listen(3000, () => {
     console.log("App is running on PORT 3000");

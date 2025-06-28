@@ -1,0 +1,28 @@
+week3b -> connecting the frontend with the backend.
+
+Authentication {
+    1. Hashing {
+        - Function that converts password into a strange format that is stored in the database.
+        - Encrypting the string password into a strange Encrypted password.
+        - An X password will always have a Y hashed password.
+        - You can always convert string to hash but not a hash into a string.
+        - Its a little different than encryption as an encrypted message can always be decrypted but it is not the same for hashedd. A hashed message can never be decrypted it is one way.
+    }
+    
+    2. JSON Web Tokens {
+        - JSON  : Hashing working in JSON format ("aryanc381": "idfhfsdioffhowejiopfwepfjwe")
+        - Web   : Works on web.
+        - Token : Just converting complex JSON object into a string.
+        - I/p JSON OBJECT -> Complex one string representing the entire JSON object.
+    }
+
+    3. Local Storage { WHAT HAPPENS IN THE FRONTEND AND THE BACKEND
+        - User sends password to the backend via frontent.
+        - Server checks that password in the database and passes back a JWT string.
+        - Now this is very essential, JWT strings are very important and they are locally stored in the browser local storage.
+        - Now every-time a user sends a request, this JWT token is used to auhenticate the user and send back the response.
+        - Through this logging in and doing everything is not required all the time.
+        - Users do it once and the JWT token stays until the user logs out i.e the JWT Token string has been removed.
+        - This is fucking good frontend engineering.  
+    }
+}
