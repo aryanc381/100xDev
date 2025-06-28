@@ -1,4 +1,4 @@
-week3b -> connecting the frontend with the backend.
+week3b -> connecting the frontend with the backend and databases
 
 Authentication {
     1. Hashing {
@@ -25,4 +25,47 @@ Authentication {
         - Users do it once and the JWT token stays until the user logs out i.e the JWT Token string has been removed.
         - This is fucking good frontend engineering.  
     }
+
+    4. [IMP] authbackend.js {
+        Create a website that has 2 endpoints {
+            1. POST "/signin" -> Body {
+                username: string,
+                password: string
+            }
+            2. GET "/users" -> Header {
+                Auth Header: if(token==correct): returns array of all users  else: return 403
+            }
+        }
+    }
+
+    5. Databases {
+        - In-memory : Server crashes -> data lost.
+        - This is why I need to make databases.
+        - Also in-memory is stupid, it cant be dynamic.
+        - Databases can be dynamic.
+        - User cannot talk to the databse directly, it is always through a server.
+        - Different DBs: Graph DBs, Vector DBs, SQL DBs, NoSQL DBs.
+    }
+
+    6. MongoDB {
+        - Allows multidatabase.
+        - table creation => can be done.
+        - JSON data-dumping in tables => easily possible.
+        - **IMP** it is schemaless -> Schema can be changed and modified easily.
+        - This is why it can scale well.
+    }
+
+    7. How does the backend connectto the database? {
+        a. express createsn HTTP Server.
+        b. JSONWebTokens library lets me create jets.
+        c. Monoose lets me connect the dbs to this express http server.
+    }
+
+    8. dbsBasic.js { Create a backend architecture with mongoose that can communicate with the database present at MongoDB and can perform 3 of the foll reqs.
+        - /signup       -> req: (username, password, first + last name) | if(user != exists): [res: (information stored i.e added to the database)] else: console.log(user exists).
+        - /signin       -> req: (username + password) | res: jwt token.
+        - /user(header) -> req: (jwt token in header) | res: user-data shown from mongoDB in the output.
+    }
+
+
 }
