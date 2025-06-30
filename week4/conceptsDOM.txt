@@ -1,0 +1,18 @@
+DOM -> Javascript makes the HTML page active and dynamic via DOM.
+
+The WHAT { MOTA MOTA LETS THE BACKEND TALK WITH THE FRONTEND i.e Making the frontend dynamic
+    1. Programming interface for wen docs.
+    2. It is not a programming language.
+    3. WebAPI to make websites dynamic.
+    4. It is language agnostic, its not a part of JS.
+    5. Good concept -> locate the element | display the element | adding the text to the element 
+}
+
+Finding the HTML Elements {
+    1. by ID - getElementById()
+    2. by tagname - getElementsByTagname()
+    3. class name - getElementsByClassName()
+    4. css selectors
+    5. html object collections
+
+}

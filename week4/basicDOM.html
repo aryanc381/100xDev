@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <script>
+/*
+            function withPromises() {
+                const num1 = document.getElementById("firstNum").value;
+                const num2 = document.getElementById("secondNum").value;
+                const element = document.getElementById("finalSum")
+                console.log(num1);
+                console.log(num2);
+                console.log(element)
+                const ans = parseInt(num1) + parseInt(num2);
+                fetch("http://localhost:3000/sum?a=" + num1 + "&b=" + num2)
+                    .then(function(response) {
+                        console.log(response);
+
+                        response.text()
+                            .then(function(ans) {
+                                console.log(ans);
+                                element.innerHTML = ans;
+                            })
+                    })
+            }
+*/
+
+            async function asyncClean() {
+                const a = document.getElementById("firstNum").value;
+                const b = document.getElementById("secondNum").value;
+                
+                const response = await fetch("http://localhost:3000/sum?a=" + a + "&b=" + b);
+                const ans = await response.text();
+                document.getElementById("finalSum").innerHTML = ans;
+            }
+
+            async function asyncPrincipal() {
+                const principal = document.getElementById("Principal").value;
+                const rate = document.getElementById("Rate").value;
+                const time = document.getElementById("Time").value;
+                
+                const res = await fetch("http://localhost:3000/interest?principal=" + principal + "&time=" + time + "&rate=" + rate);
+                const ans = await res.text();
+                document.getElementById("finalAmnt").innerHTML = ans;
+            }
+        </script>
+
+        <input id="firstNum" type="text" placeholder="First Number">
+        <br></html>
+        <input id="secondNum" type="text" placeholder="Second Number"></input>
+        <br></br>
+        <button onclick="asyncClean()">Submit</button>
+        <div id="finalSum"></div>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <input id="Principal" type="text" placeholder="Enter Principal">
+        <input id="Rate" type="text" placeholder="Enter Rate">
+        <input id="Time" type="text" placeholder="Enter Time">
+        <button onclick="asyncPrincipal()">Calculate Total</button>
+        <div id="finalAmnt"></div>
+    </body>
+</html>
