@@ -1,0 +1,24 @@
+1. What are databases {
+    - Where all user schema is stored.
+    - Prisma / Mongoose is used to access these databases.
+    - MongoDB is a popular database because it is free in nature and doesnt require schemas i.e it is schemaless.
+    - Now this is also a problem, when user hits the database, any data can be obtained by only one request.
+}
+
+2. MongoDB & Express Servers {
+    - This is why express servers are put in as the middleman to safeguard the main database.
+    - Express Servers like Prisma and Mongoose are used to do this task.
+    - They incorporate schemas so that the user is only able to access information that is present in the body of the schemas. 
+    - express-schema.jpg has a visual representation of this.
+}
+
+3. Exception FIREBASE {
+    - Firebase provides granular selection of objects directly in the database.
+    - THis removes the need of express servers but I feel there might be some limitations to this.
+}
+
+4. Database Jargons {
+    - Cluster  :  
+    - Database :
+    - Table    : 
+}
