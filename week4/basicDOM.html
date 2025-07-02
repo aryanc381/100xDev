@@ -21,8 +21,15 @@
                             })
                     })
             }
-*/
-
+*/          
+            let timeout;
+            function debouncePopulateDiv() {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    asyncClean(),
+                    1000
+                });
+            }
             async function asyncClean() {
                 const a = document.getElementById("firstNum").value;
                 const b = document.getElementById("secondNum").value;
@@ -58,7 +65,7 @@
         <input id="Principal" type="text" placeholder="Enter Principal">
         <input id="Rate" type="text" placeholder="Enter Rate">
         <input id="Time" type="text" placeholder="Enter Time">
-        <button onclick="asyncPrincipal()">Calculate Total</button>
+        <button oninput="asyncPrincipal()">Calculate Total</button>
         <div id="finalAmnt"></div>
     </body>
 </html>

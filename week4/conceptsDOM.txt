@@ -16,3 +16,11 @@ Finding the HTML Elements {
     5. html object collections
 
 }
+
+Sending requests automatically [THROTLING, DEBOUNCING] => basicDOM.html {
+    1. Throtling -> To automatically send request to the server anytime the request body is changed.
+    - Thortling -> onInput(function1() {})
+    - But theres a problem if user sends 123 and 456 in the num1 and num2, then total 6 requests are sent to the server which are unnecessary.
+    2. Debouncing -> Not sendig the request immediately while the req is changed but waiting for some time by adding a timer or something else.
+    
+}
