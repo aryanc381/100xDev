@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+#input {
+    padding: 24px 32px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+#input input {
+    width: 200px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    padding: 6px 23px;
+}
+
+#toDoButton {
+    padding: 6px 90px;
+    cursor: pointer;
+}
