@@ -1,3 +1,5 @@
+// explains the JWT webToken
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const jwtPassword = "chodi@123";

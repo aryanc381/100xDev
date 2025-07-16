@@ -6,7 +6,7 @@ Authentication {
         - Encrypting the string password into a strange Encrypted password.
         - An X password will always have a Y hashed password.
         - You can always convert string to hash but not a hash into a string.
-        - Its a little different than encryption as an encrypted message can always be decrypted but it is not the same for hashedd. A hashed message can never be decrypted it is one way.
+        - Its a little different than encryption as an encrypted message can always be decrypted but it is not the same for hashed. A hashed message can never be decrypted it is one way.
     }
     
     2. JSON Web Tokens {
@@ -17,7 +17,7 @@ Authentication {
     }
 
     3. Local Storage { WHAT HAPPENS IN THE FRONTEND AND THE BACKEND
-        - User sends password to the backend via frontent.
+        - User sends password to the backend via frontend.
         - Server checks that password in the database and passes back a JWT string.
         - Now this is very essential, JWT strings are very important and they are locally stored in the browser local storage.
         - Now every-time a user sends a request, this JWT token is used to auhenticate the user and send back the response.
@@ -43,7 +43,7 @@ Authentication {
         - This is why I need to make databases.
         - Also in-memory is stupid, it cant be dynamic.
         - Databases can be dynamic.
-        - User cannot talk to the databse directly, it is always through a server.
+        - User cannot talk to the database directly, it is always through a server.
         - Different DBs: Graph DBs, Vector DBs, SQL DBs, NoSQL DBs.
     }
 
@@ -55,10 +55,10 @@ Authentication {
         - This is why it can scale well.
     }
 
-    7. How does the backend connectto the database? {
-        a. express createsn HTTP Server.
+    7. How does the backend connect to the database? {
+        a. express creates an HTTP Server.
         b. JSONWebTokens library lets me create jets.
-        c. Monoose lets me connect the dbs to this express http server.
+        c. Mongoose lets me connect the dbs to this express http server.
     }
 
     8. dbsBasic.js { Create a backend architecture with mongoose that can communicate with the database present at MongoDB and can perform 3 of the foll reqs.

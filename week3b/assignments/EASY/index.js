@@ -20,6 +20,7 @@ let ADMINS = [];
 let USERS = [];
 let COURSES = [];
 let courseId = 0;
+let userId = 0;
 
 // Admin routes
 app.post('/admin/signup', (req, res) => {
@@ -160,23 +161,86 @@ app.get('/admin/courses', (req, res) => {
 
 // User routes
 app.post('/users/signup', (req, res) => {
-  // logic to sign up user
+  const username = req.body.username;
+  const password = req.body.password;
+  for(let i = 0; i < USERS.length; i++) {
+    if(USERS[i].username === username) {
+      return res.status(406).json({
+        msg: "User already exists"
+      })
+    }
+  }
+
+  const new_user = {
+    id: ++userId,
+    username: username,
+    password: password,
+    courses: [],
+  };
+
+  USERS.push(new_user);
+  return res.status(201).json({
+    username: username,
+    msg: "User has been created successfully."
+  });
+
+
 });
 
 app.post('/users/login', (req, res) => {
-  // logic to log in user
+  const username = req.headers.username;
+  const password = req.headers.password;
+
+  if(!userExists(USERS, username, password)) {
+    return res.status(401).json({
+      msg: "Please enter correct username or password"
+    })
+  }
+
+  res.status(202).json({
+    username: username,
+    msg: "Login successfull"
+  })
 });
 
 app.get('/users/courses', (req, res) => {
-  // logic to list all courses
+  res.status(200).json({
+    id: COURSES.id,
+    courses: COURSES.course,
+    description: COURSES.description,
+    price: COURSES.price
+  });
 });
 
 app.post('/users/courses/:courseId', (req, res) => {
-  // logic to purchase a course
+   username = req.headers.username;
+   password = req.body.password;
+   course = req.body.course;
+
+   let k = 0;
+
+   for(let i = 0; i < USERS.length; i++) {
+    if(!userExists(USERS, username, password)) {
+      return res.status(401).json({
+        username: username,
+        msg: "Username does not exist"
+      });
+    }
+
+    for(let i = 0; i < USERS.length; i++) {
+      if(USERS[i].username === username) {k = i;}
+    }
+    
+   }
+   for(let i = 0; i < COURSES.length; i++) {
+      if(COURSES[i] === course) {
+        new_user[k].courses.push(COURSES[i]);
+      }
+    }
 });
 
 app.get('/users/purchasedCourses', (req, res) => {
-  // logic to view purchased courses
+  in
 });
 
 app.listen(3000, () => {
