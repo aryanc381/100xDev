@@ -31,7 +31,7 @@ console.log(afterTimeInMs - beforeTimeInMs)
 */
 
 // JSON - Javascript Object Notation
-/*
+
 const users = '{"name": "aryan", "age": 21, "height": 6.3}'
 const users_parse = JSON.parse(users)
 
@@ -48,4 +48,3 @@ const user2string = JSON.stringify(user2)
 console.log(user2string)
 
 console.log(Math.random())
-*/
