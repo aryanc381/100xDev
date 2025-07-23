@@ -3,6 +3,7 @@ import './App.css'
 import { CountContext } from './Context';
 
 function App() {
+  // prop drilling - bad syntactic way of passing props from parent -> child -> grandchild -> great grand-child
   const [count, setCount] = useState(0); // teleportation of props from parent to any child down the line without manual transportation from one child to another is done by contextAPI and prop drilling problem is solved
 
   return (
