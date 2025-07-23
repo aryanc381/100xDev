@@ -1,0 +1,17 @@
+.post {
+  width: 200;
+  background-color: white;
+  border-radius: 10;
+  border-color: gray;
+  display: flex;
+}
+
+.post img {
+  width: 20;
+  height: 20;
+  border-radius: 20px;
+}
+
+.main {
+  background-color: #dfe6e9;
+}

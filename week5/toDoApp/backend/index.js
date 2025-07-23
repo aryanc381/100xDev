@@ -41,6 +41,21 @@ app.get("/todos", async (req, res) => {
     })
 })
 
+app.get("/todos/:id", async (req, res) => {
+    const todos = await todo.find({});
+    const id = req.params.id;
+    for(let i = 0; i < todos.length; i++) {
+        if(todos[i]._id.toString() === id) {
+            return res.status(201).json({
+                User: todos[i]
+            });
+        }
+    }
+    return res.status(404).json({
+        msg: "User not found."
+    });
+});
+
 app.put("/completed", async (req, res) => {
     const updatePayload = req.body;
     const parsedPayload = updatePayload.safeParse(updatePayload);

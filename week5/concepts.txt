@@ -1,0 +1,23 @@
+React {
+    1. Easier way to write HTML, CSS, JS.
+    2. It's like a wrapper that under the hood converts into HTML, CSS, JS.
+    3. WHY {
+        - Takes away the pain of writing DOM in the conventional way.
+        - The conventional way of doing DOM is in traditionalDOM.html
+    }
+    4. WHAT {
+        - To create a react app, one usually need to worry about two things -> a. state b. components.
+        - STATE : Represents the current state of the app. Anything dynamic that changes in the app has a current state. For example, in the counter btn, the number is the dynamic element that has a state.
+        - You just have to update the state and react updates the DOM element.
+        - COMPONENT : The html element that changes due to the state.
+        - RE-RENDERING : When the state changes, the component updates respectively. This is called re-rendering. A re-render sepresents the actual DOM being manipulated when the state changes.
+        You usually have to define all the components at once. After that you just have to update the state of your app and react takes care of re-rendering the app.
+    }
+
+    5. Commands {
+        - npm create vite@latest => folder-name => choose js.
+        - npm install => to install dependencies.
+        - npm run dev => to run the website.
+        - npm run build => to convert the jsx code to [html, css, js] that can be directly put on the aws and hosted.
+    }
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<script>
+    function onButtonPress() {
+        const currentVal = document.getElementById("btn").innerHTML;
+        console.log(currentVal.split(" "));
+        const current = currentVal.split(" ")[1];
+        const newC = parseInt(current) + 1;
+        document.getElementById("btn").innerHTML = "Counter " + newC;
+    }
+</script>
+
+<body>
+    <button onclick="onButtonPress()" id="btn">Counter 0</button>
+</body>
+</html>
