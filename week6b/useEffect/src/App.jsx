@@ -20,7 +20,8 @@ function App() {
         <button onClick={function() {setSelectedId("68765fc12165ca8958108665")}}>4</button>
       </div>
       <Todo id={selectedId} />
-      
+      <Counter />
+      <Component2 />
     </div>
   )
 }
@@ -46,6 +47,40 @@ function Todo({id}) {
     <h1>{todo.title}</h1>
     <h4>{todo.description}</h4>
   </div>
+}
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function alertFunction() {
+    setTimeout(() => {
+      alert("You clicked on: " + count);
+    }, 1000);
+  }
+  return(
+    <div>
+      <p>You clicked on counter {count} times.</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button onClick={alertFunction}>Show Alert</button>
+    </div>
+  )
+}
+
+function Component2 () {
+  function sayHi(person) {
+      const name = person.name;
+      setTimeout(() => {
+      alert("Hello: " + name);
+    }, 3000);
+  }
+  
+  let someone = {name: "Aryan"}
+  sayHi(someone);
+  return(
+    <div>
+      {sayHi}
+    </div>
+  )
 }
 
 export default App
