@@ -1,43 +1,61 @@
-import { useContext, useState } from 'react'
-import './App.css'
-import { CountContext } from './Context';
+import { countAtom, evenSelector } from "./store/atoms/count";
+import './App.css';
+import { RecoilRoot, useSetRecoilState, useRecoilValue } from 'recoil';
+
 
 function App() {
   // prop drilling - bad syntactic way of passing props from parent -> child -> grandchild -> great grand-child
-  const [count, setCount] = useState(0); // teleportation of props from parent to any child down the line without manual transportation from one child to another is done by contextAPI and prop drilling problem is solved
+
 
   return (
     <div>
-      <CountContext.Provider value={count}>
-        <Count setCount={setCount}/>
-      </CountContext.Provider>
+      <RecoilRoot>
+        <Count/>
+      </RecoilRoot>
+        
+
     </div>
   )
 }
 
-function Buttons({setCount}) {
-  const count = useContext(CountContext);
+// useRecoilState - [count, setCount]
+// useRecoilValue - count
+// useSetRecoilValue - setCount
+// used for global states, recoil is a state-management tool used.
+
+
+function Buttons() {
+  const setCount = useSetRecoilState(countAtom);
+  console.log("Re-rendered by buttons")
   return <div>
     <button onClick={() => {
-      setCount(count + 1)
+      setCount(count => count + 1)
     }}>Increase</button>
   </div>
 }
 
 function CountRerenderer() {
-  const count = useContext(CountContext);
+  const count = useRecoilValue(countAtom);
   return <div>
       {count}
     </div>
 }
 
-function Count({setCount}) {
+function Count() {
   return (
   <div>
     <CountRerenderer/>
-    <Buttons setCount={setCount}/>
+    <Buttons/>
+    <EvenCountRenderer />
   </div>
   )
 }
 
+function EvenCountRenderer() {
+  const isEven = useRecoilValue(evenSelector);
+  console.log("Even");
+  return <div>
+    {isEven ? <p>Even</p> : "Odd"}
+  </div>
+}
 export default App;
