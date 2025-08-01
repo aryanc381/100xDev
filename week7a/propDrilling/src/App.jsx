@@ -55,7 +55,7 @@ function EvenCountRenderer() {
   const isEven = useRecoilValue(evenSelector);
   console.log("Even");
   return <div>
-    {isEven ? <p>Even</p> : "Odd"}
+    {isEven ? <p>Even</p> : <p>Odd</p>}
   </div>
 }
 export default App;
