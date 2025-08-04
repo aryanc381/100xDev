@@ -112,10 +112,10 @@ function UseCallback() {
     console.log("Child clicked!");
   }
 
-  const Child = memo(({onClick}) => {
+  const Child = memo(() => {
     console.log("Child render!");
     return <div>
-      <button onClick={onclick}>Button Clicked!</button>
+      <button onClick={onClick}>Button Clicked!</button>
     </div>
   })
   return <div>
