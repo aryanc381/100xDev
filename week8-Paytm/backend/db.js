@@ -34,8 +34,22 @@ const userSchema = mongoose.Schema({
     },
 });
 
-const user = mongoose.model('Paytm-users', userSchema);
+const accountSchema = new mongoose.Schema({
+    userId: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }, 
+    balance: {
+        type: Number,
+        required: true
+    }
+});
+
+const AccountDB = mongoose.model('Paytm-account', accountSchema);
+const User = mongoose.model('Paytm-users', userSchema);
 
 module.exports = {
-    user
+    AccountDB,
+    User
 };
