@@ -8,6 +8,8 @@ const { authMiddleware } = require('./middleware');
 const router = express.Router();
 const app = express();
 
+router.use(express.json()); 
+
 const signupBody = zod.object({
     username: zod.string(),
     password: zod.string(),
