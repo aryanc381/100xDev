@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Signin() {
   const [signPass, setSignPass] = useState('');
   const [signUser, setSignUser] = useState('');
+  let status = 0;
+  const navigate = useNavigate();
 
   async function signInHandler() {
     console.log("Sign Up data: ", { signUser, signPass });
@@ -15,6 +18,12 @@ function Signin() {
         password: signPass
       }
     });
+    status = response.status;
+
+    if(status === 200) {
+      navigate('/dash');
+    }
+    
     console.log(response);
   }
   return (

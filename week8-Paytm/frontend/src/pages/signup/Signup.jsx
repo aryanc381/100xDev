@@ -38,7 +38,7 @@ function Signup() {
                 <p className='pl-[2vw]'>Password</p>
                 <input value={signPass} onChange={(e) => {setSignPass(e.target.value)}} ype="text" className='border rounded mb-[1vw] border-gray-400 ml-[2vw]'/>
 
-                <p onClick={signupHandler} className='p-[1vw] rounded-b mt-[1vw] bg-gray-200 hover:bg-black hover:cursor-pointer hover:text-white transition ease-in-out duration-200 text-center'>Submit</p>
+                <p onClick={signupHandler} className='p-[1vw] rounded-b mt-[1vw] bg-gray-200 hover:bg-black hover:cursor-pointer hover:text-white transition ease-in-out duration-200 text-center'>Sing Up</p>
             </div>
         </div>
     </>
