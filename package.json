@@ -8,5 +8,24 @@
     "react-router-dom": "^7.7.1",
     "recoil": "^0.7.7",
     "zod": "^3.25.67"
-  }
+  },
+  "name": "100xdev",
+  "version": "1.0.0",
+  "description": "Here, I upload my full-stack course codes, regularly solved assignments and class notes\r I have made a change yada yada yada.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryanc381/100xDev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryanc381/100xDev/issues"
+  },
+  "homepage": "https://github.com/aryanc381/100xDev#readme"
 }
