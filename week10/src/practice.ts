@@ -1,3 +1,4 @@
+import Client = require('pg');
 import pg = require('pg');
 
 const client = new pg.Client({
@@ -56,6 +57,42 @@ async function selectUsersTable() {
     console.log(results);
 }
 
+async function safetyUsersTable(email: string) {
+    /* const client = new pg.Client({
+        host: "localhost",
+        port: 5432,
+        database: 'postgres',
+        user: 'postgress',
+        password: 'mysecretpassword'
+    }) */
+    await client.connect();
+    const query = `SELECT * FROM users WHERE email = $1`;
+    const values = [email];
+    const results = await client.query(query, values);
+
+    if(results.rows.length > 0) {
+        console.log('User found: ', results.rows[0]);
+        return results.rows[0];
+    } else {
+        console.log('No user found with the given email.');
+        return null;
+    }
+}
+
+// safetyUsersTable("haha@gmail.com");
+
+async function join() {
+    await client.connect();
+    const results = await client.query(`
+        SELECT u.id, u.username, u.email, a.city, a.country, a.street, a.pincode
+        FROM users u
+        JOIN addresses a ON u.id = a.user_id
+        WHERE u.id = 1;        
+    `);
+    console.log(results);
+}
+join();
+
 // createUsersTable();
 
 // insertUsersTable();
@@ -66,7 +103,7 @@ async function selectUsersTable() {
 
 // deleteUsersTable();
 
-selectUsersTable();
+// selectUsersTable();
 
 
 
