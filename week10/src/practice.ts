@@ -78,7 +78,6 @@ async function safetyUsersTable(email: string) {
         return null;
     }
 }
-
 // safetyUsersTable("haha@gmail.com");
 
 async function join() {
@@ -91,7 +90,7 @@ async function join() {
     `);
     console.log(results);
 }
-join();
+// join();
 
 // createUsersTable();
 
