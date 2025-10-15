@@ -13,7 +13,5 @@ wss.on('connection', (socket) => { // on making connection do this.
     // 2. Receiving data from user
     socket.on("message", (e) => {
         console.log(e.toString());
-    })
+    });
 });
-
-// ping pong
