@@ -1,35 +1,18 @@
-import { useEffect, useRef, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import { Basic } from './basic'
+import { Task1 } from './task1'
+import { Task2 } from './task2'
 
 function App() {
-  const [socket, setSocket] = useState();
-  //@ts-ignore
-  const inputRef = useRef();
-  
-  function sendMessage() {
-    if(!socket) {
-      return;
-    }
-    //@ts-ignore
-    const message = inputRef.current.value;
-    //@ts-ignore
-    socket.send(message);
-  }
-
-  useEffect(() => {
-    const ws = new WebSocket('ws://localhost:8080');
-    //@ts-ignore
-    setSocket(ws);
-    ws.onmessage = (e) => {
-      alert(e.data);
-    }
-  }, [])
   return (
-    <>
-      {/* @ts-ignore */}
-      <input ref={inputRef} type="text" className="text" placeholder='Message...' />
-      <button onClick={sendMessage}>Send</button>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/basic' element={<Basic />} />
+        <Route path='/task1' element={<Task1 />} />
+        <Route path='/task2' element={<Task2 />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -21,5 +21,5 @@ wss.on('connection', (socket) => { // socket -> ref var used to send, receive to
 
     socket.on('disconnect', () => {
         allSockets = allSockets.filter(x => x != socket);
-    })
+    });
 });
