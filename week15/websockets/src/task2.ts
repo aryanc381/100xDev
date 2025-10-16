@@ -21,7 +21,7 @@ wss.on('connection', (socket) => {
             allSockets.push({
                 //@ts-ignore
                 socket,
-                room: parsedMessage.payload.roomId
+                roomId: parsedMessage.payload.roomId
             });
             console.log('socket has been added to room');
         }
