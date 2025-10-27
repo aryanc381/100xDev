@@ -11,8 +11,7 @@ let allSockets: User[] = [];
 let parsedMessage: any;
 wss.on('connection', (socket) => {
     socket.on('message', (message) => {
-        //@ts-ignore
-        
+        //@ts-ignore 
         //@ts-ignore
         parsedMessage = JSON.parse(message);
         console.log(parsedMessage);
@@ -21,14 +20,14 @@ wss.on('connection', (socket) => {
             allSockets.push({
                 //@ts-ignore
                 socket,
-                roomId: parsedMessage.payload.roomId
+                room: parsedMessage.payload.roomId
             });
             console.log('socket has been added to room');
         }
         if(parsedMessage.type == "chat") {
             console.log('chat socket has been called.')
             //@ts-ignore
-            const currentUserRoom = allSockets.find((x) => x.socket == socket).room;
+            const currentUserRoom = allSockets.find((x) => x.socket == socket).room; 
             for(let i = 0; i < allSockets.length; i++) {
                 //@ts-ignore
                 if(allSockets[i].room == currentUserRoom) {
