@@ -1,2 +1,3 @@
 # 100xDev
-- Fullstack Web-D
+- Fullstack Web Dev from harkirat.
+- Understanding core concepts.
