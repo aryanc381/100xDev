@@ -35,7 +35,7 @@ export const User = () => {
             alert("you are logged out");
         }}
         >
-        Logout
+        Logout.
         </button>
 
     </div>
