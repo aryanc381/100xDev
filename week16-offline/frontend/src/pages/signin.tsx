@@ -1,13 +1,27 @@
+import { useState } from "react"
+import axios from "axios"
 
-function Signin() {
-  return (
-    <>
-        <div>Signin</div>
-        <p>hi</p>
-        <h1>mana</h1>
-    </>
-    
-  )
+export const Signin = () => {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
+    return <div>
+        <input onChange={(e) => {
+            setUsername(e.target.value);
+        }} type="text" placeholder="username" />
+        <input onChange={(e) => {
+            setPassword(e.target.value);
+        }} type="password" placeholder="password" />
+        <button onClick={async () => {
+            await axios.post(`http://localhost:3000/signin`, {
+                username,
+                password
+            }, {
+                withCredentials: true,
+            });
+            alert("you are logged in")
+        }}>Submit</button>
+    </div>
 }
 
 export default Signin;
