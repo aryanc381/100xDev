@@ -19,7 +19,7 @@ export const User = () => {
   }, []);
 
   return (
-    <div>
+    <div>e
       You're id is {userData?.userId}
       <br />
       <br />
@@ -28,16 +28,7 @@ export const User = () => {
             await axios.post(
             "http://localhost:3000/logout",
             {},
-            { withCredentials: true }
-            );
-
-            setUserData(null);
-            alert("you are logged out");
-        }}
-        >
-        Logout.
-        </button>
-
+            { withCredentials: true }); setUserData(null); alert("you are logged out"); }}>Logout</button>
     </div>
   );
 };
