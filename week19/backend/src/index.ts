@@ -11,6 +11,6 @@ app.post('/submit', async (req, res) => {
     const { problemId, userId, code, language } = req.body;
     await client.lPush('submissions', JSON.stringify({ problemId, userId, code, language }));
     return res.json({ message: 'Submission recieved.' });
-});
+})
 
 app.listen(3000, () => { console.log('App runs at PORT 3000') });
